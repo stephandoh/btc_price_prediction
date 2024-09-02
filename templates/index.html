@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC Closing Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict BTC Closing Price</h1>
+        <form action="/predict" method="POST">
+            <label for="open">Open Price:</label>
+            <input type="text" id="open" name="open"><br>
+            <label for="high">High Price:</label>
+            <input type="text" id="high" name="high"><br>
+            <label for="low">Low Price:</label>
+            <input type="text" id="low" name="low"><br>
+            <input type="submit" value="Predict">
+        </form>
+        <div id="result">
+            {% if prediction_text %}
+                <h2>{{ prediction_text }}</h2>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer>
+        <p>Background image by <a href="https://unsplash.com/@shubhamdhage" target="_blank">Shubham Dhage</a> on Unsplash</p>
+    </footer>
+</body>
+</html>
