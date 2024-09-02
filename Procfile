@@ -1,2 +1,1 @@
-web: gunicorn my_module:myapp
-
+web: python app.py
